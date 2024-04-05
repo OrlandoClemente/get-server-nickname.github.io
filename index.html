@@ -79,6 +79,7 @@ function getNickname() {
 
     // Вивести результат
     document.getElementById("result").innerHTML = 'Ваш нікнейм: ' + result + '<i class="copy-icon" onclick="copyToClipboard(\'' + result + '\')" title="Копіювати">&#128203;</i>';
+    copyToClipboard(result)
 }
 
 function copyToClipboard(text) {
