@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Страница з полями вводу</title>
+<title>Отримання ніку для сервера</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -55,8 +55,22 @@
         <input type="text" class="input-field" placeholder="Статичний ID #">
         <br>
         <button type="submit" class="button">Отримати нік на сервері</button>
+        <div id="result" style="margin-top: 20px;"></div>
     </form>
 </div>
 
+<script>
+    function getNickname() {
+        var name = document.getElementById("name").value;
+        var surname = document.getElementById("surname").value;
+        var code = document.getElementById("code").value;
+    
+        // Об'єднати значення полів вводу
+        var result = '1 | ' + name + ' ' + surname + ' #' + code;
+    
+        // Вивести результат
+        document.getElementById("result").innerText = 'Ваш нікнейм: ' + result;
+    }
+    </script>
 </body>
 </html>
