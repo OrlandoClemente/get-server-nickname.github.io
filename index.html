@@ -41,6 +41,15 @@
     .button:hover {
         background-color: #b71c1c; /* Темно-червоний */
     }
+    .copy-icon {
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: 20px;
+        vertical-align: middle;
+    }
+    .copy-icon:hover {
+        color: #b71c1c; /* Темно-червоний */
+    }
 </style>
 </head>
 <body>
@@ -60,23 +69,17 @@
 </div>
 
 <script>
-    function getNickname() {
-        var name = document.getElementById("name").value;
-        var surname = document.getElementById("surname").value;
-        var code = document.getElementById("code").value;
-    
-        // Об'єднати значення полів вводу
-        var result = '1 | ' + name + ' ' + surname + ' #' + code;
-    
-        // Вивести результат
-        document.getElementById("result").innerText = 'Ваш нікнейм: ' + result;
-    }
+function getNickname() {
+    var name = document.getElementById("name").value;
+    var surname = document.getElementById("surname").value;
+    var code = document.getElementById("code").value;
 
-    document.getElementById("result").addEventListener("click", function() {
-        var text = document.getElementById("result").innerText;
-        copyToClipboard(text);
-        alert("Текст скопійовано!");
-    });
+    // Об'єднати значення полів вводу
+    var result = '1 | ' + name + ' ' + surname + ' #' + code;
+
+    // Вивести результат
+    document.getElementById("result").innerHTML = 'Ваш нікнейм: ' + result + '<i class="copy-icon" onclick="copyToClipboard(\'' + result + '\')" title="Копіювати">&#128203;</i>';
+}
 
 function copyToClipboard(text) {
     var dummy = document.createElement("textarea");
@@ -85,7 +88,9 @@ function copyToClipboard(text) {
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy);
+    alert("Текст скопійовано!");
 }
-    </script>
+</script>
+
 </body>
 </html>
