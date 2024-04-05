@@ -71,6 +71,21 @@
         // Вивести результат
         document.getElementById("result").innerText = 'Ваш нікнейм: ' + result;
     }
+
+    document.getElementById("result").addEventListener("click", function() {
+        var text = document.getElementById("result").innerText;
+        copyToClipboard(text);
+        alert("Текст скопійовано!");
+    });
+
+function copyToClipboard(text) {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
     </script>
 </body>
 </html>
