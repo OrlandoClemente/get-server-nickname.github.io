@@ -1,7 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Страница з полями вводу</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffe8f1; /* Рожевий */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        text-align: center;
+    }
+    .input-field {
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ff4081; /* Рожевий */
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+    }
+    .button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #d50032; /* Червоний */
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .button:hover {
+        background-color: #b71c1c; /* Темно-червоний */
+    }
+</style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+<div class="container">
+    <h1>Отримання ніку для сервера</h1>
+    <form>
+        <input type="text" class="input-field" id="name" placeholder="Ім'я">
+        <br>
+        <input type="text" class="input-field" id="surname" placeholder="Прізвище">
+        <br>
+        <input type="text" class="input-field" placeholder="Статичний ID #">
+        <br>
+        <button type="submit" class="button">Отримати нік на сервері</button>
+    </form>
+</div>
+
 </body>
 </html>
